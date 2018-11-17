@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>地址</title>
+    <link rel="stylesheet" href="./css/layout-d6111c035f.css">
+    <style>
+        .link {
+            margin-top: 20px;
+            background-color: #cccccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-main">
+    <h1>生成地址</h1>
+    <div class="input-group">
+        <input type="tel" class="input-control" id="input">
+    </div>
+
+    <div class="btn-group">
+        <button type="button" id="btnCreate" class="btn">生成地址</button>
+    </div>
+
+    <div class="link">
+        <a href="#" id="link"></a>
+    </div>
+</div>
+
+<script>
+    (function() {
+        function encode(str) {
+            const str1 = str + '';
+            const arr = [...str1];
+            const arr1 = arr.map(item => (item.charCodeAt(0) + 3).toString(16));
+            return encodeURIComponent(arr1.join(','))
+        }
+
+        const input = document.getElementById('input');
+        const btn = document.getElementById('btnCreate');
+        const link = document.getElementById('link');
+
+        btn.addEventListener('click', function () {
+            const value = input.value.trim();
+
+            if (value) {
+                const aa = encode(value);
+                const href = location.origin + '/sign/dist/index.html?s=' + aa;
+
+                link.href = href;
+                link.textContent = href;
+            }
+        })
+    }());
+</script>
+</body>
+</html>
