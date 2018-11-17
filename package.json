@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node ./config/server.js"
   },
-  "repository": "git@github.com:wangcylive/canvasSignature.git",
-  "author": "wangchunyang <chunyang_wang@istudy.com.cn>",
+  "repository": "",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.0",

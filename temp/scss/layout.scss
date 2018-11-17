@@ -1,0 +1,196 @@
+$font-base-size: 20px;
+
+$btn-primary: #4489dc;
+$color-link: #1b72da;
+
+a {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover, &:active {
+        color: darken($color-link, 10%);
+    }
+}
+
+@function rem($px) {
+    @return $px / $font-base-size + rem;
+}
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    font-size: 20px;
+}
+
+body {
+    font-size: rem(16px);
+}
+
+h1 {
+    font-size: rem(16px);
+}
+h2 {
+    font-size: rem(15px);
+}
+
+.text-center {
+    text-align: center;
+}
+
+$border-color: #ccc;
+
+.table-border {
+    border-collapse: collapse;
+    border-spacing: 0;
+    td, th {
+        border: 1px solid $border-color;
+        padding: 10px 5px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid #999;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: rem(14px);
+    color: #333;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover, &:active {
+        background-color: darken(#fff, 5%);
+    }
+}
+
+.btn-primary {
+    background-color: $btn-primary;
+    border-color: darken($btn-primary, 5%);
+    color: #fff;
+
+    &:hover, &:active {
+        background-color: darken($btn-primary, 10%);
+        color: #fff;
+    }
+}
+
+.page-read {
+    color: #333;
+    padding-bottom: 30px;
+
+    h1 {
+        text-align: center;
+    }
+
+    .content {
+        font-size: .7rem;
+
+        p {
+            margin: 10px 0;
+            text-indent: 2em;
+        }
+    }
+
+    .btn-submit {
+        margin: 30px auto 0 auto;
+        display: block;
+        width: 240px;
+    }
+}
+
+.page-main {
+    padding-bottom: 30px;
+
+    > .btn-back {
+        font-size: rem(14px);
+        color: #777;
+    }
+
+    > .tips {
+        margin-top: 10px;
+        font-size: rem(14px);
+        color: #333;
+        text-align: center;
+    }
+}
+
+.agreement-group {
+    .btn-group {
+        margin-top: 15px;
+    }
+}
+
+.sign-btn-group {
+    display: flex;
+    padding: 15px 0;
+
+    a {
+        flex: 1 1 100px;
+        text-align: center;
+    }
+}
+
+.sign-prompt {
+    margin: 8px 0;
+    font-size: rem(13px);
+    color: #999;
+}
+
+.hide {
+    display: none;
+}
+
+.canvas {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    border: 1px solid #999;
+    user-select: none;
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+.input-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: none;
+    font-size: rem(16px);
+}
+
+.btn-group {
+    text-align: center;
+    .btn {
+        min-width: 100px;
+        + .btn {
+            margin-left: 15px;
+        }
+    }
+}
+
+.no-download {
+    > .btn-back {
+        font-size: rem(14px);
+        color: #777;
+    }
+
+    > .tips {
+        margin: 10px 0;
+        font-size: rem(14px);
+        color: #666;
+        text-align: center;
+    }
+
+    > img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
